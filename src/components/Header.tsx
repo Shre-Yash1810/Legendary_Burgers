@@ -55,7 +55,8 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-white/5 bg-bg-dark/80 backdrop-blur-md">
+    <>
+      <header className="sticky top-0 z-40 w-full border-b border-white/5 bg-bg-dark/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         
         {/* Brand Logo */}
@@ -143,6 +144,7 @@ export const Header: React.FC = () => {
         </div>
 
       </div>
+      </header>
 
       {/* Mobile Slide-in Drawer */}
       {/* Overlay backdrop */}
@@ -205,6 +207,6 @@ export const Header: React.FC = () => {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 };
