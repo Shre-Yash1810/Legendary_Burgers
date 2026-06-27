@@ -85,7 +85,7 @@ export const MenuSection: React.FC = () => {
                 className={`px-5 py-3 rounded-2xl font-display text-sm font-extrabold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
                   isActive
                     ? 'bg-primary text-white shadow-lg shadow-primary/25 glow-orange scale-105'
-                    : 'bg-surface hover:bg-surface-hover text-text-secondary hover:text-white border border-white/5'
+                    : 'bg-[#1A1A1A] hover:bg-[#262626] text-text-secondary hover:text-white border border-white/5'
                 }`}
               >
                 <span className="flex items-center gap-2">

@@ -147,7 +147,7 @@ export const CartDrawer: React.FC = () => {
               animate={{ y: 0, x: '-50%' }}
               exit={{ y: '100%', x: '-50%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed bottom-0 md:bottom-auto md:top-1/2 left-1/2 z-50 w-full max-w-lg md:-translate-y-1/2 md:rounded-3xl bg-surface border border-white/5 shadow-2xl flex flex-col max-h-[92vh] md:max-h-[85vh] overflow-hidden"
+              className="fixed bottom-0 md:bottom-auto md:top-1/2 left-1/2 z-50 w-full max-w-lg md:-translate-y-1/2 md:rounded-3xl bg-[#1A1A1A] border border-white/5 shadow-2xl flex flex-col max-h-[92vh] md:max-h-[85vh] overflow-hidden"
             >
               {/* Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-white/2">
@@ -284,7 +284,7 @@ export const CartDrawer: React.FC = () => {
                             }}
                             disabled={isSubmitting}
                             placeholder=" "
-                            className={`peer w-full px-4 py-3 rounded-xl bg-surface border text-sm text-white placeholder-transparent focus:outline-none transition-colors ${
+                            className={`peer w-full px-4 py-3 rounded-xl bg-[#1A1A1A] border text-sm text-white placeholder-transparent focus:outline-none transition-colors ${
                               errors.name 
                                 ? 'border-red-500 focus:border-red-500' 
                                 : 'border-white/10 focus:border-primary'
@@ -292,8 +292,8 @@ export const CartDrawer: React.FC = () => {
                           />
                           <label
                             htmlFor="customerName"
-                            className={`absolute left-4 text-xs text-text-secondary transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3.5 peer-focus:-top-2 peer-focus:text-xs peer-focus:px-1.5 peer-focus:bg-surface pointer-events-none ${
-                              customerName ? '-top-2 px-1.5 bg-surface text-primary' : 'top-3.5'
+                            className={`absolute left-4 text-xs text-text-secondary transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3.5 peer-focus:-top-2 peer-focus:text-xs peer-focus:px-1.5 peer-focus:bg-[#1A1A1A] pointer-events-none ${
+                              customerName ? '-top-2 px-1.5 bg-[#1A1A1A] text-primary' : 'top-3.5'
                             }`}
                           >
                             Your Name
@@ -313,7 +313,7 @@ export const CartDrawer: React.FC = () => {
                               if (errors.table) setErrors(prev => ({ ...prev, table: '' }));
                             }}
                             disabled={isSubmitting}
-                            className={`w-full px-4 py-3 rounded-xl bg-surface border text-sm text-white focus:outline-none transition-colors appearance-none cursor-pointer ${
+                            className={`w-full px-4 py-3 rounded-xl bg-[#1A1A1A] border text-sm text-white focus:outline-none transition-colors appearance-none cursor-pointer ${
                               errors.table 
                                 ? 'border-red-500 focus:border-red-500' 
                                 : 'border-white/10 focus:border-primary'

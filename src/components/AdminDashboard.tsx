@@ -163,7 +163,7 @@ export const AdminDashboard: React.FC = () => {
     <div className="min-h-screen bg-bg-dark text-white flex flex-col md:flex-row border-b border-white/5">
       
       {/* Sidebar Navigation */}
-      <aside className="w-full md:w-64 bg-surface border-r border-white/5 flex flex-col justify-between shrink-0">
+      <aside className="w-full md:w-64 bg-[#1A1A1A] border-r border-white/5 flex flex-col justify-between shrink-0">
         <div className="p-6">
           {/* Logo & title */}
           <div className="flex items-center gap-3 border-b border-white/5 pb-6">
@@ -533,7 +533,7 @@ export const AdminDashboard: React.FC = () => {
                   value={settingsName}
                   onChange={(e) => setSettingsName(e.target.value)}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-surface border border-white/10 focus:border-primary focus:outline-none text-sm text-white transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-[#1A1A1A] border border-white/10 focus:border-primary focus:outline-none text-sm text-white transition-colors"
                 />
               </div>
 
@@ -545,7 +545,7 @@ export const AdminDashboard: React.FC = () => {
                     value={settingsPhone}
                     onChange={(e) => setSettingsPhone(e.target.value)}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-surface border border-white/10 focus:border-primary focus:outline-none text-sm text-white transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-[#1A1A1A] border border-white/10 focus:border-primary focus:outline-none text-sm text-white transition-colors"
                   />
                 </div>
                 
@@ -556,7 +556,7 @@ export const AdminDashboard: React.FC = () => {
                     value={settingsEmail}
                     onChange={(e) => setSettingsEmail(e.target.value)}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-surface border border-white/10 focus:border-primary focus:outline-none text-sm text-white transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-[#1A1A1A] border border-white/10 focus:border-primary focus:outline-none text-sm text-white transition-colors"
                   />
                 </div>
               </div>
@@ -568,7 +568,7 @@ export const AdminDashboard: React.FC = () => {
                   onChange={(e) => setSettingsAddress(e.target.value)}
                   required
                   rows={2}
-                  className="w-full px-4 py-3 rounded-xl bg-surface border border-white/10 focus:border-primary focus:outline-none text-sm text-white transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-[#1A1A1A] border border-white/10 focus:border-primary focus:outline-none text-sm text-white transition-colors resize-none"
                 />
               </div>
 
@@ -579,7 +579,7 @@ export const AdminDashboard: React.FC = () => {
                   value={settingsHours}
                   onChange={(e) => setSettingsHours(e.target.value)}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-surface border border-white/10 focus:border-primary focus:outline-none text-sm text-white transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-[#1A1A1A] border border-white/10 focus:border-primary focus:outline-none text-sm text-white transition-colors"
                 />
               </div>
 
@@ -629,7 +629,7 @@ export const AdminDashboard: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95, y: '-40%', x: '-50%' }}
               animate={{ opacity: 1, scale: 1, y: '-50%', x: '-50%' }}
               exit={{ opacity: 0, scale: 0.95, y: '-40%', x: '-50%' }}
-              className="fixed top-1/2 left-1/2 z-50 w-[92%] max-w-lg bg-surface border border-white/5 rounded-3xl shadow-2xl p-6 sm:p-8"
+              className="fixed top-1/2 left-1/2 z-50 w-[92%] max-w-lg bg-[#1A1A1A] border border-white/5 rounded-3xl shadow-2xl p-6 sm:p-8"
             >
               <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-6">
                 <h3 className="text-lg font-bold text-white uppercase tracking-wider">
