@@ -106,3 +106,8 @@ input[type=number] {
 .animate-particle {
   animation: floatParticle 8s infinite linear;
 }
+
+.mobile-drawer {
+  background-color: #1A1A1A !important;
+  background-image: none !important;
+}
