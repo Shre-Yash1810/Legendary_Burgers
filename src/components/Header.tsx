@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { Logo } from './Logo';
 import { Menu, X, Shield, ShoppingBag } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export const Header: React.FC = () => {
   const { 
@@ -145,75 +145,66 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Mobile Slide-in Drawer */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <>
-            {/* Overlay backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
-              exit={{ opacity: 0 }}
+      {/* Overlay backdrop */}
+      <div
+        onClick={() => setMobileMenuOpen(false)}
+        className={`fixed inset-0 z-40 bg-black/60 transition-opacity duration-300 ${
+          mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      />
+      
+      {/* Drawer */}
+      <div
+        className={`fixed inset-y-0 right-0 z-50 w-72 max-w-xs p-6 shadow-2xl border-l border-white/5 flex flex-col justify-between transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        style={{ backgroundColor: '#1A1A1A' }}
+      >
+        <div className="flex flex-col gap-8">
+          {/* Close Button & Brand */}
+          <div className="flex items-center justify-between border-b border-white/5 pb-4">
+            <Logo className="h-8 w-8" />
+            <button 
               onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 z-40 bg-black"
-            />
-            
-            {/* Drawer */}
-            <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 z-50 w-72 max-w-xs p-6 shadow-2xl border-l border-white/5 flex flex-col justify-between mobile-drawer"
-              style={{ backgroundColor: '#1A1A1A' }}
+              className="p-1 rounded-full hover:bg-white/5 text-text-secondary hover:text-white cursor-pointer"
             >
-              <div className="flex flex-col gap-8">
-                {/* Close Button & Brand */}
-                <div className="flex items-center justify-between border-b border-white/5 pb-4">
-                  <Logo className="h-8 w-8" />
-                  <button 
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="p-1 rounded-full hover:bg-white/5 text-text-secondary hover:text-white cursor-pointer"
-                  >
-                    <X size={20} />
-                  </button>
-                </div>
+              <X size={20} />
+            </button>
+          </div>
 
-                {/* Mobile Links */}
-                <nav className="flex flex-col gap-4">
-                  {navLinks.map((link) => {
-                    const isActive = currentView === 'storefront' && storefrontSection === link.value;
-                    return (
-                      <button
-                        key={link.value}
-                        onClick={() => handleNavClick(link.value)}
-                        className={`text-left text-lg font-bold tracking-wide uppercase py-2 cursor-pointer transition-colors ${
-                          isActive ? 'text-primary' : 'text-text-secondary hover:text-white'
-                        }`}
-                      >
-                        {link.label}
-                      </button>
-                    );
-                  })}
-                </nav>
-              </div>
-
-              {/* Bottom Admin Button in Drawer */}
-              <div className="border-t border-white/5 pt-6 flex flex-col gap-4">
+          {/* Mobile Links */}
+          <nav className="flex flex-col gap-4">
+            {navLinks.map((link) => {
+              const isActive = currentView === 'storefront' && storefrontSection === link.value;
+              return (
                 <button
-                  onClick={handleAdminToggle}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold tracking-wider uppercase text-white hover:bg-white/10 transition-all cursor-pointer"
+                  key={link.value}
+                  onClick={() => handleNavClick(link.value)}
+                  className={`text-left text-lg font-bold tracking-wide uppercase py-2 cursor-pointer transition-colors ${
+                    isActive ? 'text-primary' : 'text-text-secondary hover:text-white'
+                  }`}
                 >
-                  <Shield size={16} />
-                  {currentView === 'admin' ? 'Customer App' : 'Admin Panel'}
+                  {link.label}
                 </button>
-                <div className="text-center text-[10px] text-text-secondary">
-                  © 2026 Legendary Burgers
-                </div>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+              );
+            })}
+          </nav>
+        </div>
+
+        {/* Bottom Admin Button in Drawer */}
+        <div className="border-t border-white/5 pt-6 flex flex-col gap-4">
+          <button
+            onClick={handleAdminToggle}
+            className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold tracking-wider uppercase text-white hover:bg-white/10 transition-all cursor-pointer"
+          >
+            <Shield size={16} />
+            {currentView === 'admin' ? 'Customer App' : 'Admin Panel'}
+          </button>
+          <div className="text-center text-[10px] text-text-secondary">
+            © 2026 Legendary Burgers
+          </div>
+        </div>
+      </div>
     </header>
   );
 };
