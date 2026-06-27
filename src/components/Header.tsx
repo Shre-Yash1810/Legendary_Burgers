@@ -163,7 +163,8 @@ export const Header: React.FC = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 z-50 w-72 max-w-xs bg-[#1A1A1A] p-6 shadow-2xl border-l border-white/5 flex flex-col justify-between"
+              className="fixed inset-y-0 right-0 z-50 w-72 max-w-xs p-6 shadow-2xl border-l border-white/5 flex flex-col justify-between"
+              style={{ backgroundColor: '#1A1A1A' }}
             >
               <div className="flex flex-col gap-8">
                 {/* Close Button & Brand */}
